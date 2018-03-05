@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 
     public string logText = "Hello world again";
     public float speed = 2;
-    public float jumpspeed = 50;
+    public float jumpspeed = 3;
     public float health = 10;
 
     // Use this for initialization
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         //Find out if we are touching the ground
 
         //Get the collider component attached to this object
-        Collider2D collider = GetComponent < Collider2D();
+        Collider2D collider = GetComponent <Collider2D>();
 
         //Find out if we are colliding with the ground
         LayerMask groundlayer = LayerMask.GetMask("Ground");
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         velocity.x = horizontal * speed;
  
         // Set the y (up/down) component of the velocity based on jump
-        if (jumpspeed == true && touchingGround == true) 
+		if (jump == true && touchingGround == true) 
         {
             velocity.y = jumpspeed;
         }
